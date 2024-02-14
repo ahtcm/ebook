@@ -32,131 +32,14 @@
 </style> -->
 </head>
 <body>
-    <!-- <span class="box" ></span>
+    <span class="box" ></span>
     
     <script>
         var typed = new Typed(".box", {
-            strings: ["PDF阅读器 &nbsp; "],
+            strings: ["PDF阅读器！请访问本站的list.json &nbsp; "],
             typeSpeed: 200,
             loop: true
         });
-    </script> -->
-
-    <div class="p_20 bs_bb">
-        <div class="d_f jc_c">
-            <button id="idFolder" class="w_50_ fs_30 cursor_pointer">打开文件夹</button>
-        </div>
-        
-        <div id="idContent" class="m_t_20 bs_bb p_20 bc_rgba_192_1"></div>
-    </div>
-
-    <script>
-        // 全局文件句柄
-// 多处用到此变量
-// 所以定义到全局
-let root = [];
-
-// 打开文件夹(导入文件夹)
-idFolder.onclick = async function () {
-	try {
-		let handle = await showDirectoryPicker(),
-			node = document.querySelector('#idContent');
-		
-		node.innerHTML = '';
-		
-		root = await processHandle(handle);
-		
-		createTreeDirectory(node, root.children);
-	} catch (error) {
-		console.log(error);
-		// 用户拒绝的处理
-	}
-};
-
-// 进程句柄(获取文件夹中的文件夹句柄和文件句柄)
-async function processHandle(handle) {
-	if (handle.kind === 'file') return handle;
-	
-	// 注意这个地方
-	// 不可以定义新变量接收数据
-	// 否则文件夹句柄将不能保存
-	handle.children = [];
-	// 得到异步迭代器
-	let iter = handle.entries();
-	
-	for await (let item of iter) handle.children.push(await processHandle(item[1]));
-	
-	return handle;
-}
-
-// 通过递归创建树形目录
-function createTreeDirectory(node, data) {
-	const ul = document.createElement("ul");
-	
-	ul.className = "p_l_20";
-	node.appendChild(ul);
-	
-	data.forEach((item) => {
-		let li = document.createElement("li");
-		
-		li.className = item.kind === 'file' ? 'fs_18 w_fc cursor_pointer' : '';
-		// 动态绑定事件
-		if (item.kind === 'file') li.onclick = handleFileContent;
-		
-		ul.appendChild(li);
-		
-		if (item.children && item.children.length > 0) {
-			const details = document.createElement("details");
-			
-			li.appendChild(details);
-			
-			const summary = document.createElement("summary");
-			
-			summary.className = item.kind === 'directory' ? "fs_18 w_fc cursor_default" : "";
-			summary.textContent = item.name;
-			details.appendChild(summary);
-			
-			createTreeDirectory(details, item.children);
-		} else {
-			li.textContent = item.name;
-		}
-	});
-}
-
-// 文件点击事件
-function handleFileContent({ target: { innerText } }) {
-	getFileHandle(root.children, innerText);
-}
-
-// 通过递归获取指定文件句柄
-function getFileHandle(data, name) {
-	for (let i = 0; i < data.length; i++) {
-		let item = data[i];
-		
-		if (item.name === name) {
-			return readText(item);
-		} else {
-			if (item.children && item.children.length > 0) {
-				let res = getFileHandle(item.children, name);
-				
-				if (res) return res;
-			}
-		}
-	}
-}
-
-// 输出文件内容
-async function readText(fileHandle) {
-	let file = await fileHandle.getFile(),
-		reader = new FileReader();
-	
-	reader.onload = ({ target: { result } }) => {
-		console.log(`-------输出结果-------\n${result}`);
-	}
-	
-	reader.readAsText(file, 'utf-8');
-}
-
     </script>
 </body>
 </html>
