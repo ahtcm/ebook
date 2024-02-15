@@ -1,4 +1,4 @@
-[1.1_计算机的发展（大纲已删 但建议看看）](https://ahtcm.netlify.app/web/viewer.html?file=https://ahtcm.netlify.app/ebook\408\co\1\1.1_计算机的发展（大纲已删 但建议看看）.pdf)
+[1.1_计算机的发展](https://ahtcm.netlify.app/web/viewer.html?file=https://ahtcm.netlify.app/ebook\408\co\1\1.1_计算机的发展.pdf)
 [1.2_1_计算机硬件的基本组成](https://ahtcm.netlify.app/web/viewer.html?file=https://ahtcm.netlify.app/ebook\408\co\1\1.2_1_计算机硬件的基本组成.pdf)
 [1.2_2_认识各个硬件部件](https://ahtcm.netlify.app/web/viewer.html?file=https://ahtcm.netlify.app/ebook\408\co\1\1.2_2_认识各个硬件部件.pdf)
 [1.2_3_计算机系统的层次结构](https://ahtcm.netlify.app/web/viewer.html?file=https://ahtcm.netlify.app/ebook\408\co\1\1.2_3_计算机系统的层次结构.pdf)
