@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Excel from URL</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <meta name="referrer" content="no-referrer">
+</head>
+<body>
+    <input type="text" id="excelUrl" placeholder="Enter Excel URL" />
+    <button onclick="loadExcel()">Load Excel</button>
+    <div id="excelContent"></div>
+
+    <script>
+        function loadExcel() {
+            const url = document.getElementById('excelUrl').value;
+            fetch(url)
+                .then(response => response.arrayBuffer())
+                .then(buffer => {
+                    const data = new Uint8Array(buffer);
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    const sheet = workbook.Sheets[workbook.SheetNames[0]];
+                    const html = XLSX.utils.sheet_to_html(sheet);
+                    document.getElementById('excelContent').innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Error loading Excel:', error);
+                });
+        }
+    </script>
+</body>
+</html>
