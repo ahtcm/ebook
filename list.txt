@@ -282,3 +282,5 @@
 [1_4递推数列的极限](https://ahtcm.netlify.app/web/viewer.html?file=https://ahtcm.netlify.app/ebook\math\1\1_4递推数列的极限.pdf)
 [1_5夹逼准则求数列极限](https://ahtcm.netlify.app/web/viewer.html?file=https://ahtcm.netlify.app/ebook\math\1\1_5夹逼准则求数列极限.pdf)
 [1_6极限中的概念题](https://ahtcm.netlify.app/web/viewer.html?file=https://ahtcm.netlify.app/ebook\math\1\1_6极限中的概念题.pdf)
+[base.](https://ahtcm.netlify.app/web/viewer.html?file=https://ahtcm.netlify.app/ebook\vocabulary\base.xlsx)
+[important.](https://ahtcm.netlify.app/web/viewer.html?file=https://ahtcm.netlify.app/ebook\vocabulary\important.xlsx)
